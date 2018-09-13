@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FifthQues.Properties
+namespace program2.Properties
 {
 
 

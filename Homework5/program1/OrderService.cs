@@ -38,6 +38,14 @@ namespace program1
             return true;
         }
 
+        public Order seekOrderByTPrice(string tPrice)
+        {
+            if(double.TryParse(tPrice, out double totalPrice)) {
+                return OrderList.Where(order => order.OrderDetails.TotalPrice == totalPrice).First();
+            } else {
+                throw new ArgumentException("Invalid input");
+            }
+        }
         public bool addOrderGoods(string according,string gName, string gQuantity, string gUPrice)
         {
             Order order = seekOrder(according);

@@ -167,11 +167,6 @@ namespace program1
             XmlDocument doc = new XmlDocument();
             doc.Load(@".\temp");
 
-            //FileStream fileStream = new FileStream("temp.xml", FileMode.Open);
-            //StreamReader streamReader = new StreamReader(fileStream, System.Text.Encoding.Default);
-            //string s = streamReader.ReadLine();
-            //XmlReader xmlReader = XmlReader.Create(streamReader);
-
             XPathNavigator nav = doc.CreateNavigator();
             nav.MoveToRoot();
 

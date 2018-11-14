@@ -171,7 +171,7 @@ namespace program1
             nav.MoveToRoot();
 
             XslCompiledTransform xt = new XslCompiledTransform();
-            xt.Load(@".\temp.xslt");
+            xt.Load(@"..\..\temp.xslt");
 
             XmlTextWriter xmlTextWriter = new XmlTextWriter("orderSevice.html", Encoding.BigEndianUnicode);
 

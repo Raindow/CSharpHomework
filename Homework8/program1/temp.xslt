@@ -14,18 +14,32 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 								<li>
 									<font>OrderDetails</font><br/>
 									<font>OrderThings</font><br/>
-									<font>OrderThings</font><br/>
-									<ul>
-										<xsl:for-each select="OrderDetails/OrderThings/Good">
+									<!--<ul>
+										<li><font>Good:</font></li>
+										<xsl:for-each select="OrderDetails/OrderThings/Good">	
 											<li><font>Name:</font><xsl:value-of select="Name"/></li>
 											<li><font>Id:</font><xsl:value-of select="Id"/></li>
 											<li><font>Quantity:</font><xsl:value-of select="Quantity"/></li>
 											<li><font>UPrice:</font><xsl:value-of select="UPrice"/></li>
 											<li><font>TPrice:</font><xsl:value-of select="TPrice"/></li>
 										</xsl:for-each>
-									</ul><br/>
+									</ul><br/>-->
+									<xsl:choose>
+											<xsl:when test="OrderDetails/OrderThings/Good">
+												<ul>										
+													<xsl:for-each select="OrderDetails/OrderThings/Good">	
+														<li><font>Name:</font><xsl:value-of select="Name"/></li>
+														<li><font>Id:</font><xsl:value-of select="Id"/></li>
+														<li><font>Quantity:</font><xsl:value-of select="Quantity"/></li>
+														<li><font>UPrice:</font><xsl:value-of select="UPrice"/></li>
+														<li><font>TPrice:</font><xsl:value-of select="TPrice"/></li>
+													</xsl:for-each>	
+												</ul>								
+											</xsl:when>
+											<xsl:otherwise></xsl:otherwise>
+									</xsl:choose>
 									<font>TotalPrice:<xsl:value-of select="OrderDetails/OrderThings/TotalPrice"/></font>
-								</li>								
+								</li><br/>								
 							</xsl:for-each>
 						</ul>
 					</body>

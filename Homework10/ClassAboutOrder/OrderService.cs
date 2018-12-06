@@ -84,7 +84,7 @@ namespace ClassAboutOrder
                 if (uint.TryParse(gQuantity, out uint quantity) && double.TryParse(gUPrice, out double uPrice)) {
                     Good good = new Good(gName, quantity, uPrice);
                     //order.OrderDetails.addGoods(good);
-                    //db.Order.Attach(order);                    
+                    db.Order.Attach(order);                    
                     order.OrderDetails.addGoods(good);
                     db.OrderDetails.Attach(order.OrderDetails);
                     db.Entry(good).State = System.Data.Entity.EntityState.Added;
